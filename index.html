@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha gata!</title>
+
+    <style>
+body{
+    background-color: red;
+}
+
+.painel{
+    margin: auto;
+    background-color: white;
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#sim{
+    position: absolute;
+    height: 40px;
+    width: 60px;
+    background-color: red;
+    border: white;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+#nao{
+    position: absolute;
+    height: 40px;
+    width: 60px;
+    background-color: red;
+    border: white;
+    border-radius: 10px;
+    color: white;
+    margin-left: 70px;
+    cursor: pointer;
+}
+
+
+#coracao2{
+    position: absolute;
+    padding-top: 150px;
+    width: 200px;
+    height: 200px;
+    margin-left: -80px;
+}
+
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="painel">
+        <h1>EI, PSIU!</h1>
+        <img src="https://i.pinimg.com/originals/44/93/0e/44930e09e9285e828de6604aa93560b2.gif" id="coracao2">
+        <h2>ACEITA NAMORAR COMIGO ?</h2>
+        
+        
+        <button id="sim" onclick="parabens()">Sim! </button>
+        <button onmouseover="fuja()" id="nao">Não!</button>
+
+    </div>
+
+    <script>
+        function fuja(){
+            var botaoNao = document.getElementById("nao")
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+        
+        function parabens(){
+            alert("Parabéns, você fez a escolha certa!")
+        }
+    </script>
+</body>
+</html>
